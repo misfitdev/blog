@@ -2,7 +2,7 @@
 layout: post
 title:  "Disagree and Commit: Pros, Cons and Success"
 date:   2022-02-26 08:50:48 -0600
-categories: mangement engineering
+categories: management engineering
 ---
 
 # Summary
