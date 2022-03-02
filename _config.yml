@@ -26,7 +26,7 @@ github_username:  misfitdev
 
 # Build settings
 markdown: kramdown
-theme: minima
+theme: jekyll-theme-architect
 permalink: /:year/:title:output_ext
 
 # plugins:
