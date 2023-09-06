@@ -5,8 +5,6 @@ tagline: "The courts are rigged, so he's rigging the game. Can Trump learn law a
 genre: Political Satire / Comedy
 ---
 
-# Preface
-
 Sometimes inspiration comes in the most unlikely of places.  Like when someone said this in a Slack somewhere:
 
 ![Slack request: Legally Strawberry Blonde]({{ site.baseurl }}/images/slack-legally-strawberry-blonde.png)
@@ -79,3 +77,5 @@ Apparently the World's Dumbest Carrot put his hair color down as "strawberry blo
 ## Aftermath
 
 - As Trump faces yet another legal issue with the law school, he still believes he's done an incredible job. In his eyes, everyone else is just too biased to see his "genius."
+
+
