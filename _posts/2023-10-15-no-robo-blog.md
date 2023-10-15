@@ -15,8 +15,6 @@ tags:
   - humans
 ---
 
-# No Robo Blog
-
 I've been using ChatGPT to improve and speed up a bit of my work lately.  The
 results are often Good Enough and that's usually all you need.  I've written
 documentation, played games with my kid, planned activities, done
