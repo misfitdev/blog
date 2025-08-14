@@ -2,16 +2,30 @@
 layout: default
 ---
 
-<div class="posts">
+{% comment %}
+TODO: Consider adding back a "Sections" concept in the future:
+- Small, fixed set of high-level categories for top-level filtering
+- Separate from free-form tags which can grow over time
+- Would use a dedicated sections field vs categories/tags
+{% endcomment %}
+
+<!-- Browse Tags Link -->
+<div class="page-header">
+  <a href="{{ site.baseurl }}/tags/" class="browse-tags">Browse tags</a>
+</div>
+
+<!-- Posts -->
+<div class="posts" id="postContainer">
   {% for post in site.posts %}
-    <article class="post">
-
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-
-      <div class="entry">
+    <article class="post-card">
+      <h1 class="post-title"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+      
+      <p class="post-date">{{ post.date | date: "%B %d, %Y" }}</p>
+      
+      <div class="post-excerpt">
         {{ post.excerpt }}
       </div>
-
+      
       <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
     </article>
   {% endfor %}

@@ -4,26 +4,43 @@
     <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ site.baseurl }}/style.css" />
   </head>
   <body>
-    <header>
-      <img src="{{ site.avatar }}" alt="{{ site.name }}" class="avatar">
-      <h1><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
-      <p>{{ site.description }}</p>
-      <nav>
-        <a href="{{ site.baseurl }}/">Blog</a>
-        <a href="{{ site.baseurl }}/about">About</a>
-      </nav>
-    </header>
-    
-    <main>
-      {{ content }}
-    </main>
+    <div class="container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="site-title">
+          <img src="{{ site.avatar }}" alt="{{ site.name }}" class="avatar">
+          <div>
+            <h1><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
+            <p class="site-subtitle">{{ site.description }}</p>
+          </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+          <ul>
+            <li><a href="{{ site.baseurl }}/" class="nav-label">Writings</a></li>
+          </ul>
+        </nav>
+      </aside>
+      
+      <!-- Main content -->
+      <main class="content">
+        <div class="posts">
+          {{ content }}
+        </div>
+      </main>
+    </div>
     
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     <script>
       mermaid.initialize({ startOnLoad: true });
+      
+      // No client-side filtering for now - using server-side tag pages only
     </script>
   </body>
 </html>

@@ -9,3 +9,18 @@ permalink: /:title/
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+  toc_levels: 2..3
+
+plugins:
+  - jekyll-toc
+
+toc:
+  min_level: 2
+  max_level: 3
+  ordered_list: false
+  no_toc_section_class: no_toc
+  list_id: toc
+  list_class: toc
+  sublist_class: ''
+  item_class: toc-entry
+  item_prefix: toc-

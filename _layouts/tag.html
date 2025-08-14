@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+<div class="tag-header">
+  <h1>Posts in "{{ page.tag }}"</h1>
+  <p class="tag-count">{{ site.categories[page.tag] | size }} posts</p>
+</div>
+
+<div class="posts">
+  {% for post in site.categories[page.tag] %}
+    <article class="post" data-tags="{% for category in post.categories %}{{ category | slugify }}{% unless forloop.last %},{% endunless %}{% endfor %}">
+      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+      
+      <div class="post-meta">
+        <time>{{ post.date | date: "%b %d, %Y" }}</time>
+        {% if post.categories %}
+          <div class="post-tags">
+            {% for category in post.categories %}
+              <span class="tag-pill">{{ category }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+      
+      <div class="entry">
+        {{ post.excerpt }}
+      </div>
+      
+      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+    </article>
+  {% endfor %}
+</div>

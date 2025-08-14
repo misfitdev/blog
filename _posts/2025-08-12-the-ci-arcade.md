@@ -7,30 +7,9 @@ categories:
   - satire
 description: "Ship less. Save more. A fairness layer for CI that saves money by slowing you down just enough."
 published: true
-toc: true
 ---
 
 A fairness layer for CI that saves money by slowing you down just enough.
-
-## Table of Contents
-- [TL;DR](#tldr)
-- [The Pitch](#the-pitch)
-- [Core Mechanics](#core-mechanics)
-  - [Token lifecycle](#token-lifecycle)
-  - [Golden path flow](#golden-path-flow)
-  - [Sequence diagram](#sequence-diagram)
-  - [Token state machine](#token-state-machine)
-- [UI Concepts](#ui-concepts)
-- [Workflows](#workflows)
-- [Pricing Theory](#pricing-theory)
-- [SLOs](#slos)
-- [Governance and Compliance Theater](#governance-and-compliance-theater)
-- [Change Management](#change-management)
-- [Behavioral Design](#behavioral-design)
-- [FAQ](#faq)
-- [Launch Assets](#launch-assets)
-- [How We "Measure Success"](#how-we-measure-success)
-- [Appendix: Forced Issuance Flow](#appendix-forced-issuance-flow)
 
 ## TL;DR
 CI is too fast, engineers are too parallel, and cloud bills are too real.  

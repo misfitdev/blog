@@ -3,7 +3,30 @@ layout: default
 ---
 
 <article>
-  <h1>{{ page.title }}</h1>
-  <time>{{ page.date | date: "%B %e, %Y" }}</time>
-  {{ content }}
+  <header class="article-header">
+    <h1 class="article-title">{{ page.title }}</h1>
+    <p class="article-date">{{ page.date | date: "%B %d, %Y" }}</p>
+  </header>
+  
+  {% if page.toc %}
+    {{ content | toc }}
+  {% else %}
+    <div class="article-content">
+      {{ content }}
+    </div>
+  {% endif %}
+  
+  {% if page.categories %}
+    {% assign tags_clean = page.categories | uniq | sort_natural %}
+    {% if tags_clean.size > 0 %}
+      <section class="topics-section">
+        <h3 class="topics-label">Topics</h3>
+        <div class="topics-list">
+          {% for tag in tags_clean %}
+            <a href="{{ site.baseurl }}/tags/{{ tag | slugify }}/" class="topic-chip">{{ tag }}</a>
+          {% endfor %}
+        </div>
+      </section>
+    {% endif %}
+  {% endif %}
 </article>

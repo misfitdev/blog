@@ -1,0 +1,20 @@
+---
+layout: default
+title: All Categories
+---
+
+<div class="tag-header">
+  <h1>All Categories</h1>
+  <p>Browse posts by topic</p>
+</div>
+
+<div class="tag-cloud">
+  {% assign sorted_categories = site.categories | sort %}
+  {% for category in sorted_categories %}
+    {% assign category_slug = category[0] | slugify %}
+    {% assign category_count = category[1] | size %}
+    <a href="{{ site.baseurl }}/tags/{{ category_slug }}/" class="tag-cloud-item">
+      {{ category[0] }} <span class="tag-cloud-count">({{ category_count }})</span>
+    </a>
+  {% endfor %}
+</div>
