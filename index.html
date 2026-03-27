@@ -18,9 +18,9 @@ TODO: Consider adding back a "Sections" concept in the future:
 <div class="posts" id="postContainer">
   {% for post in site.posts %}
     <article class="post-card">
-      <h1 class="post-title"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-      
-      <p class="post-date">{{ post.date | date: "%B %d, %Y" }}</p>
+      <h2 class="post-title"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+
+      <time class="post-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%B %d, %Y" }}</time>
       
       <div class="post-excerpt">
         {{ post.excerpt }}

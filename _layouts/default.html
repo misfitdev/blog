@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% if page.description %}<meta name="description" content="{{ page.description | strip_html | strip_newlines | truncate: 160 }}">{% elsif site.description %}<meta name="description" content="{{ site.description }}">{% endif %}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=Syne:wght@400..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ site.baseurl }}/style.css" />
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <div class="container">
       <!-- Sidebar -->
       <aside class="sidebar">
@@ -21,26 +23,26 @@
           </div>
         </div>
         
-        <nav class="sidebar-nav">
+        <nav class="sidebar-nav" aria-label="Site navigation">
           <ul>
-            <li><a href="{{ site.baseurl }}/" class="nav-label">Writings</a></li>
+            <li><a href="{{ site.baseurl }}/" class="nav-label{% if page.url == '/' %} nav-active{% endif %}">Writings</a></li>
           </ul>
         </nav>
       </aside>
       
       <!-- Main content -->
-      <main class="content">
+      <main class="content" id="main-content">
         <div class="posts">
           {{ content }}
         </div>
       </main>
     </div>
     
-    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-    <script>
-      mermaid.initialize({ startOnLoad: true });
-      
-      // No client-side filtering for now - using server-side tag pages only
-    </script>
+    <script src="{{ site.baseurl }}/assets/js/sidebar.js" defer></script>
+    <script src="{{ site.baseurl }}/assets/js/article.js" defer></script>
+    {% if page.mermaid %}
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js" defer></script>
+    <script defer>mermaid.initialize({ startOnLoad: true });</script>
+    {% endif %}
   </body>
 </html>

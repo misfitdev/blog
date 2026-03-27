@@ -7,6 +7,7 @@ categories:
   - satire
 description: "Ship less. Save more. A fairness layer for CI that saves money by slowing you down just enough."
 published: true
+mermaid: true
 ---
 
 A fairness layer for CI that saves money by slowing you down just enough.
@@ -89,7 +90,7 @@ stateDiagram-v2
 ---
 
 ## UI Concepts
-No code. Just vibes.
+Interface specifications. Lo-fi prototypes pending design review.
 
 ### 1) Home
 ![Home: Get Token](/assets/ci-arcade/ci-arcade-home.png)
@@ -141,9 +142,20 @@ No code. Just vibes.
 ---
 
 ## Pricing Theory
-- Free tier: soft caps and passive shaming
-- Team tier: hard caps, mandatory tokens, audit-grade logs
-- Enterprise: quarterly workshops on "Mindful Builds," SSO, and a concierge to rename "slow" to "thoughtful"
+
+**Free**
+Soft concurrency caps. Leaderboard participation. Community norms.
+
+**Team** — $8/seat/month
+Hard token enforcement. Audit logs. Manager dashboards. Monthly Arcade Health Report (PDF, branded).
+
+**Enterprise** — Contact Sales
+- Dedicated Arcade Success Manager
+- Quarterly "Build Intentionality" workshops (CPD credits available in select regions)
+- Custom Efficiency Score weighting aligned to your OKRs
+- Concierge terminology review: all system strings audited for growth-positive language
+- SLA: token issuance P99 < 45 s (intentional — supports deliberate commit practices)
+- Joint "Capacity Planning" briefing with Finance, quarterly
 
 ---
 
@@ -151,7 +163,7 @@ No code. Just vibes.
 - Token issuance P50 under 200 ms
 - Queue visibility P95 under 1 s
 - Job kill-on-force-issue P99 under 3 s
-- Monthly target: CI spend reduced by 30% without anyone admitting why
+- Monthly target: Arcade Efficiency Score ≥ 0.72 (see Appendix B for scoring model)
 
 ---
 
@@ -166,19 +178,29 @@ No code. Just vibes.
 - Retention: 13 months so you can draw bad trend lines during budget season
 - "Separation of duties": only Finance can increase concurrency ceilings
 
+### Exemptions
+- Staff+ engineers: token limits apply, but Force Issue is pre-authorized
+- Incident responders: tokens auto-issued during active PagerDuty P0/P1 alerts
+- Release managers during freeze windows: unlimited tokens, Finance-notified post-hoc
+
 ---
 
 ## Change Management
-- RFC 000: Rename "concurrency limit" to "Arcade Capacity"
-- RFC 001: Replace "job cancellation" with "graceful prize reclamation"
-- RFC 002: Introduce "Happy Hour" where tokens are free from 2–3 a.m. local time
+
+| RFC | Title | Status | Owner |
+|-----|-------|--------|-------|
+| 000 | Rename "concurrency limit" to "Arcade Capacity" | Approved | Platform |
+| 001 | Replace "job cancellation" with "graceful prize reclamation" | Approved | Comms |
+| 002 | Happy Hour tokens (2–3 a.m. local) | Rejected — "encourages off-hours heroics" | Eng |
+| 003 | Rebrand Force Issue as "Strategic Job Reconsideration" | In Review | Legal |
+| 004 | Remove "chaos" from all user-facing strings | Approved | Brand |
 
 ---
 
 ## Behavioral Design
-- Variable rewards: random "jackpot" tokens drop for people who commit less than 3 times a day
-- Social proof: weekly email celebrating the Lowest Token User
-- Loss aversion: visible countdown before a Force Issue kill, so you feel it
+- Commitment reinforcement: bonus token credits for users who maintain build frequency under 3/day. Encourages deliberate shipping.
+- Community recognition: weekly digest highlights top contributors by Arcade Efficiency Score.
+- Decision support: pre-confirmation modal on Force Issue surfaces estimated job completion percentage and time remaining. Users make informed choices.
 
 ---
 
@@ -186,8 +208,8 @@ No code. Just vibes.
 **Isn’t this just a mutex for humans?**  
 Yes. That’s the point.
 
-**Will engineers be slower?**  
-Yes. Your cloud bill will be smaller. Pick your poison.
+**Will engineers be slower?**
+No. Engineers will be more intentional. Velocity is a measure of value delivered, not jobs launched. Internal pilots show a measurable reduction in context-switching overhead and a perceived throughput improvement of 12–18%. [n=14, 8 weeks, Platform team]
 
 **What about flaky tests?**  
 Great news. You’ll notice them less often because you run fewer jobs.
@@ -226,6 +248,21 @@ flowchart LR
 - PRs linger longer but merges still happen
 - Engineers report "less chaos" while privately seething
 - Finance approves your next pet project because you "found savings"
+
+---
+
+## Appendix: Mindful Builds Workshop Curriculum (90 min)
+
+| # | Module | Duration |
+|---|--------|----------|
+| 1 | The Psychology of the Commit | 20 min |
+| 2 | Token as Intention: Treating CI Resources as Finite | 25 min |
+| 3 | Force Issue and the Ethics of Interruption | 15 min |
+| 4 | Building a Personal Arcade Efficiency Practice | 20 min |
+| 5 | Closing reflection + goal-setting | 10 min |
+
+Facilitated by a certified Mindful Builds practitioner.
+CPD credits pending accreditation (expected Q2).
 
 ---
 

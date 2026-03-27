@@ -5,16 +5,16 @@ layout: default
 <article>
   <header class="article-header">
     <h1 class="article-title">{{ page.title }}</h1>
-    <p class="article-date">{{ page.date | date: "%B %d, %Y" }}</p>
+    <time class="article-date" datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%B %d, %Y" }}</time>
   </header>
-  
-  {% if page.toc %}
-    {{ content | toc }}
-  {% else %}
-    <div class="article-content">
+
+  <div class="article-content">
+    {% if page.toc %}
+      {{ content | toc }}
+    {% else %}
       {{ content }}
-    </div>
-  {% endif %}
+    {% endif %}
+  </div>
   
   {% if page.categories %}
     {% assign tags_clean = page.categories | uniq | sort_natural %}
